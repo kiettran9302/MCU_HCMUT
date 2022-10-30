@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020020  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00007ebc  00000000  00000000  00020049  2**0
+ 12 .debug_info   0000802b  00000000  00000000  00020049  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000155b  00000000  00000000  00027f05  2**0
+ 13 .debug_abbrev 0000164b  00000000  00000000  00028074  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000948  00000000  00000000  00029460  2**3
+ 14 .debug_aranges 00000960  00000000  00000000  000296c0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000008a0  00000000  00000000  00029da8  2**3
+ 15 .debug_ranges 000008a8  00000000  00000000  0002a020  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00016224  00000000  00000000  0002a648  2**0
+ 16 .debug_macro  000163e3  00000000  00000000  0002a8c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00009286  00000000  00000000  0004086c  2**0
+ 17 .debug_line   000098ce  00000000  00000000  00040cab  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081c34  00000000  00000000  00049af2  2**0
+ 18 .debug_str    00081c54  00000000  00000000  0004a579  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000cb726  2**0
+ 19 .comment      00000050  00000000  00000000  000cc1cd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000263c  00000000  00000000  000cb778  2**2
+ 20 .debug_frame  0000264c  00000000  00000000  000cc220  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -77,10 +77,10 @@ Disassembly of section .text:
  8000148:	08001fd8 	.word	0x08001fd8
 
 0800014c <Display7Seg>:
+ */
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+#include "7seg.h"
+
 
 void Display7Seg(int num){
  800014c:	b580      	push	{r7, lr}
@@ -498,8 +498,6 @@ void Display7Seg(int num){
 
 0800046c <tswitch>:
 
-
-typedef enum State {One, Two, Three, Four} EState;
 void tswitch (EState state) {
  800046c:	b580      	push	{r7, lr}
  800046e:	b082      	sub	sp, #8
@@ -616,10 +614,9 @@ void tswitch (EState state) {
 
 0800054c <update7SEG>:
 
+
 const int MAX_LED = 4;
-int index_led = 0;
 int led_buffer [4] = {1, 2, 3, 4};
-int led_single = 0;
 void update7SEG ( int index ){
  800054c:	b580      	push	{r7, lr}
  800054e:	b084      	sub	sp, #16
@@ -1084,7 +1081,9 @@ static void MX_GPIO_Init(void)
 080007e8 <HAL_TIM_PeriodElapsedCallback>:
 
 /* USER CODE BEGIN 4 */
-int counter = 200;
+int counter = 50;
+int index_led = 0;
+int led_single = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80007e8:	b580      	push	{r7, lr}
  80007ea:	b082      	sub	sp, #8
@@ -1115,9 +1114,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8000812:	600a      	str	r2, [r1, #0]
  8000814:	4618      	mov	r0, r3
  8000816:	f7ff fe99 	bl	800054c <update7SEG>
-		counter = 200;
+		counter = 50;
  800081a:	4b0b      	ldr	r3, [pc, #44]	; (8000848 <HAL_TIM_PeriodElapsedCallback+0x60>)
- 800081c:	22c8      	movs	r2, #200	; 0xc8
+ 800081c:	2232      	movs	r2, #50	; 0x32
  800081e:	601a      	str	r2, [r3, #0]
 	}
 	led_single++;
@@ -1135,8 +1134,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8000832:	2110      	movs	r1, #16
  8000834:	4807      	ldr	r0, [pc, #28]	; (8000854 <HAL_TIM_PeriodElapsedCallback+0x6c>)
  8000836:	f000 fbbd 	bl	8000fb4 <HAL_GPIO_TogglePin>
-//		HAL_GPIO_TogglePin(GPIOA, EN_D_Pin);
-//		Display7Seg(led_single);
 		led_single = 0;
  800083a:	4b05      	ldr	r3, [pc, #20]	; (8000850 <HAL_TIM_PeriodElapsedCallback+0x68>)
  800083c:	2200      	movs	r2, #0

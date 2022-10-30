@@ -1,0 +1,4 @@
+../Core/Src/7seg.c:11:6:Display7Seg	16	static
+../Core/Src/7seg.c:108:6:tswitch	16	static
+../Core/Src/7seg.c:138:6:update7SEG	24	static
+../Core/Src/7seg.c:172:6:updateClockBuffer	16	static
