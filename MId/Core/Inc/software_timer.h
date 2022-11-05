@@ -17,6 +17,12 @@ extern int timer1_counter;
 
 int checkFlag1();
 void setTimer1(int duration);
+
+extern int timer0_flag;
+extern int timer0_counter;
+
+int checkFlag0();
+void setTimer0(int duration);
 void timerRun();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

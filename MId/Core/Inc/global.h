@@ -19,6 +19,11 @@
 #define INC			4
 #define DEC			5
 
+#define LONG_INC 	14
+#define LONG_DEC 	15
+
+#define AUTO 		20
+
 extern int counter;
 extern int status;
 
