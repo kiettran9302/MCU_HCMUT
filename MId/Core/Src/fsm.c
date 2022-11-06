@@ -86,6 +86,23 @@ void fsm_simple_buttons_run(){
 		status = WAIT;
 		break;
 	case AUTO:
+
+		if (isButtonPressed(0)){
+			status = RESET;
+		}
+		if (isButtonPressed(1)){
+			status = INC;
+		}
+		if (isButtonPressed(2)){
+			status = DEC;
+		}
+		if (isButtonLongPressed(1)){
+			status = LONG_INC;
+		}
+		if (isButtonLongPressed(2)){
+			status = LONG_DEC;
+		}
+
 		if (checkFlag0()){
 			setTimer0(AUTO_CHANGE);
 			counter--;
