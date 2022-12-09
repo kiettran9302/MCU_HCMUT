@@ -1,0 +1,2 @@
+../Core/Src/communication.c:11:6:uart_communication_fsm	8	static
+../Core/Src/communication.c:36:6:readSensor	64	static

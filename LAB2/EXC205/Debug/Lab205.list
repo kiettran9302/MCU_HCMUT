@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00009fc9  00000000  00000000  000411c6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081ce7  00000000  00000000  0004b18f  2**0
+ 18 .debug_str    00081ce8  00000000  00000000  0004b18f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000cce76  2**0
+ 19 .comment      00000050  00000000  00000000  000cce77  2**0
                   CONTENTS, READONLY
  20 .debug_frame  000026f0  00000000  00000000  000ccec8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -543,7 +543,7 @@ void tswitch (EState state) {
  80004ba:	2180      	movs	r1, #128	; 0x80
  80004bc:	4822      	ldr	r0, [pc, #136]	; (8000548 <tswitch+0xdc>)
  80004be:	f000 fdf9 	bl	80010b4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 1);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 1);
  80004c2:	2201      	movs	r2, #1
  80004c4:	f44f 7180 	mov.w	r1, #256	; 0x100
  80004c8:	481f      	ldr	r0, [pc, #124]	; (8000548 <tswitch+0xdc>)
@@ -558,22 +558,22 @@ void tswitch (EState state) {
  80004da:	79fb      	ldrb	r3, [r7, #7]
  80004dc:	2b02      	cmp	r3, #2
  80004de:	d115      	bne.n	800050c <tswitch+0xa0>
-			HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
+		HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
  80004e0:	2201      	movs	r2, #1
  80004e2:	2140      	movs	r1, #64	; 0x40
  80004e4:	4818      	ldr	r0, [pc, #96]	; (8000548 <tswitch+0xdc>)
  80004e6:	f000 fde5 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
+		HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
  80004ea:	2201      	movs	r2, #1
  80004ec:	2180      	movs	r1, #128	; 0x80
  80004ee:	4816      	ldr	r0, [pc, #88]	; (8000548 <tswitch+0xdc>)
  80004f0:	f000 fde0 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 0);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 0);
  80004f4:	2200      	movs	r2, #0
  80004f6:	f44f 7180 	mov.w	r1, #256	; 0x100
  80004fa:	4813      	ldr	r0, [pc, #76]	; (8000548 <tswitch+0xdc>)
  80004fc:	f000 fdda 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 1);
+		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 1);
  8000500:	2201      	movs	r2, #1
  8000502:	f44f 7100 	mov.w	r1, #512	; 0x200
  8000506:	4810      	ldr	r0, [pc, #64]	; (8000548 <tswitch+0xdc>)
@@ -583,27 +583,27 @@ void tswitch (EState state) {
  800050c:	79fb      	ldrb	r3, [r7, #7]
  800050e:	2b03      	cmp	r3, #3
  8000510:	d115      	bne.n	800053e <tswitch+0xd2>
-			HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
+		HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
  8000512:	2201      	movs	r2, #1
  8000514:	2140      	movs	r1, #64	; 0x40
  8000516:	480c      	ldr	r0, [pc, #48]	; (8000548 <tswitch+0xdc>)
  8000518:	f000 fdcc 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
+		HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
  800051c:	2201      	movs	r2, #1
  800051e:	2180      	movs	r1, #128	; 0x80
  8000520:	4809      	ldr	r0, [pc, #36]	; (8000548 <tswitch+0xdc>)
  8000522:	f000 fdc7 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 1);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 1);
  8000526:	2201      	movs	r2, #1
  8000528:	f44f 7180 	mov.w	r1, #256	; 0x100
  800052c:	4806      	ldr	r0, [pc, #24]	; (8000548 <tswitch+0xdc>)
  800052e:	f000 fdc1 	bl	80010b4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 0);
+		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 0);
  8000532:	2200      	movs	r2, #0
  8000534:	f44f 7100 	mov.w	r1, #512	; 0x200
  8000538:	4803      	ldr	r0, [pc, #12]	; (8000548 <tswitch+0xdc>)
  800053a:	f000 fdbb 	bl	80010b4 <HAL_GPIO_WritePin>
-		}
+	}
 }
  800053e:	bf00      	nop
  8000540:	3708      	adds	r7, #8
@@ -881,8 +881,8 @@ int main(void)
  80006e4:	60bb      	str	r3, [r7, #8]
 	  }
 
-	  if (checkFlag() == 1) {
- 80006e6:	f000 f9c1 	bl	8000a6c <checkFlag>
+	  if (checkFlag0() == 1) {
+ 80006e6:	f000 f9c1 	bl	8000a6c <checkFlag0>
  80006ea:	4603      	mov	r3, r0
  80006ec:	2b01      	cmp	r3, #1
  80006ee:	d1e5      	bne.n	80006bc <main+0x34>
@@ -1610,6 +1610,10 @@ void setTimer0 ( int duration ){
  8000a34:	2000003c 	.word	0x2000003c
 
 08000a38 <timer_run>:
+//void setTimer1 ( int duration ){
+//	timer1_counter = duration / TIMER_CYCLE ;
+////	timer0_flag = 0;
+//}
 
 void timer_run (){
  8000a38:	b480      	push	{r7}
@@ -1634,6 +1638,10 @@ void timer_run (){
  8000a58:	2201      	movs	r2, #1
  8000a5a:	601a      	str	r2, [r3, #0]
 	}
+//	if( timer1_counter > 0){
+//		timer1_counter --;
+//		if( timer1_counter == 0) timer1_flag = 1;
+//	}
 }
  8000a5c:	bf00      	nop
  8000a5e:	46bd      	mov	sp, r7
@@ -1642,23 +1650,23 @@ void timer_run (){
  8000a64:	2000003c 	.word	0x2000003c
  8000a68:	20000040 	.word	0x20000040
 
-08000a6c <checkFlag>:
+08000a6c <checkFlag0>:
 
-int checkFlag(){
+int checkFlag0(){
  8000a6c:	b480      	push	{r7}
  8000a6e:	af00      	add	r7, sp, #0
 	if (timer0_flag == 1) {
- 8000a70:	4b06      	ldr	r3, [pc, #24]	; (8000a8c <checkFlag+0x20>)
+ 8000a70:	4b06      	ldr	r3, [pc, #24]	; (8000a8c <checkFlag0+0x20>)
  8000a72:	681b      	ldr	r3, [r3, #0]
  8000a74:	2b01      	cmp	r3, #1
- 8000a76:	d104      	bne.n	8000a82 <checkFlag+0x16>
+ 8000a76:	d104      	bne.n	8000a82 <checkFlag0+0x16>
 		timer0_flag = 0;
- 8000a78:	4b04      	ldr	r3, [pc, #16]	; (8000a8c <checkFlag+0x20>)
+ 8000a78:	4b04      	ldr	r3, [pc, #16]	; (8000a8c <checkFlag0+0x20>)
  8000a7a:	2200      	movs	r2, #0
  8000a7c:	601a      	str	r2, [r3, #0]
 		return 1;
  8000a7e:	2301      	movs	r3, #1
- 8000a80:	e000      	b.n	8000a84 <checkFlag+0x18>
+ 8000a80:	e000      	b.n	8000a84 <checkFlag0+0x18>
 	}
 	return 0;
  8000a82:	2300      	movs	r3, #0

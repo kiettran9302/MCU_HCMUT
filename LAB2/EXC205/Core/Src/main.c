@@ -150,7 +150,7 @@ int main(void)
 		  hour = 0;
 	  }
 
-	  if (checkFlag() == 1) {
+	  if (checkFlag0() == 1) {
 		  updateClockBuffer(minute, hour);
 		  update7SEG(index_led++);
 		  setTimer0(1000);
