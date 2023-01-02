@@ -115,21 +115,21 @@ void tswitch (EState state) {
 	if (state == Two){
 		HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
 		HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 0);
-		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 1);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 1);
 		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 1);
 	}
 	if (state == Three){
-			HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
-			HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 0);
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 1);
+		HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
+		HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 0);
+		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 1);
 		}
 	if (state == Four){
-			HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
-			HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_C_Pin, 1);
-			HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 0);
-		}
+		HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, 1);
+		HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, 1);
+		HAL_GPIO_WritePin(EN_C_GPIO_Port, EN_C_Pin, 1);
+		HAL_GPIO_WritePin(EN_D_GPIO_Port, EN_D_Pin, 0);
+	}
 }
 
 

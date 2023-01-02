@@ -1,0 +1,7 @@
+../Core/Src/parser.c:19:5:checkRST	4	static
+../Core/Src/parser.c:26:5:checkOK	4	static
+../Core/Src/parser.c:33:9:isRSTCmd	16	static
+../Core/Src/parser.c:40:9:isOKCmd	16	static
+../Core/Src/parser.c:47:6:updateBuffer	24	static
+../Core/Src/parser.c:60:6:clearBuffer	16	static
+../Core/Src/parser.c:67:6:command_parser_fsm	8	static

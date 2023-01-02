@@ -1,0 +1,2 @@
+../Core/Src/7seg.c:53:6:driver7SEG	24	static
+../Core/Src/7seg.c:60:6:display7SEG	16	static

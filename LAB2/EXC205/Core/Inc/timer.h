@@ -12,9 +12,10 @@
 
 
 void setTimer0 ( int duration );
+void setTimer1 (int duration);
 
 void timer_run ();
 
-int checkFlag();
+int checkFlag0();
 
 #endif /* INC_TIMER_H_ */
